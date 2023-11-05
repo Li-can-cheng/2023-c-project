@@ -18,7 +18,6 @@ using namespace std;
 #define POS_X4 60//第二列
 #define POS_Y 3
 
-
 struct STU {
     long num;
     char name[50];
@@ -27,10 +26,12 @@ struct STU {
     float aver;  
 };
 
-struct Node {
+typedef struct Node {
     struct STU student;
     struct Node* next;
-};
+}Node;
+
+Node* head = NULL;
 
 int Menu();
 
@@ -87,3 +88,7 @@ void WriteToFile(STU students[], int totalStudents, int courseCount, const char*
 
 // 从文件读取学生记录
 int ReadFromFile(STU records[], int* totalStudents, int* courseCount, int* first);
+
+
+// 创建节点
+void Create() ;

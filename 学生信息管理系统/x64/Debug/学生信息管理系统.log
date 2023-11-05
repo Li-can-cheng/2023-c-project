@@ -1,27 +1,30 @@
 ﻿cl : 命令行  warning D9025: 正在重写“/sdl”(用“/GS-”)
   logic.cpp
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(8,16): warning C4838: 从“int”转换到“SHORT”需要收缩转换
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(8,18): warning C4838: 从“int”转换到“SHORT”需要收缩转换
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(99,12): warning C4473: “scanf_s”: 没有为格式字符串传递足够的参数
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(99,12): message : 占位符和其参数预计 2 可变参数，但提供的却是 1 参数
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(99,12): message : 缺失的可变参数 2 为格式字符串“%c”所需
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(99,12): message : 此参数用作缓冲区大小
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(126,6): warning C4101: “i”: 未引用的局部变量
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(149,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(178,10): warning C4477: “scanf”: 格式字符串“%c”需要类型“char *”的参数，但可变参数 1 拥有了类型“int”
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(178,4): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(181,5): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(184,6): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(307,9): warning C4101: “j”: 未引用的局部变量
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(307,6): warning C4101: “i”: 未引用的局部变量
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(455,67): warning C4474: fscanf: 格式字符串中传递的参数太多
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(455,67): message : 占位符和其参数预计 2 可变参数，但提供的却是 3 参数
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(447,12): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(455,9): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(463,10): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(471,9): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(8,16): warning C4838: 从“int”转换到“SHORT”需要收缩转换
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(8,18): warning C4838: 从“int”转换到“SHORT”需要收缩转换
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(99,12): warning C4473: “scanf_s”: 没有为格式字符串传递足够的参数
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(99,12): message : 占位符和其参数预计 2 可变参数，但提供的却是 1 参数
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(99,12): message : 缺失的可变参数 2 为格式字符串“%c”所需
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(99,12): message : 此参数用作缓冲区大小
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(126,6): warning C4101: “i”: 未引用的局部变量
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(149,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(178,10): warning C4477: “scanf”: 格式字符串“%c”需要类型“char *”的参数，但可变参数 1 拥有了类型“int”
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(178,4): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(181,5): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(184,6): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(307,9): warning C4101: “j”: 未引用的局部变量
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(307,6): warning C4101: “i”: 未引用的局部变量
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(455,67): warning C4474: fscanf: 格式字符串中传递的参数太多
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(455,67): message : 占位符和其参数预计 2 可变参数，但提供的却是 3 参数
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(447,12): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(455,9): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(463,10): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(471,9): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   main.cpp
   menu.cpp
   正在生成代码...
-S:\myC_but_VS\2023-c-project\学生信息管理系统\logic.cpp(178): warning C4700: 使用了未初始化的局部变量“ch”
-  学生信息管理系统.vcxproj -> S:\myC_but_VS\2023-c-project\学生信息管理系统\x64\Debug\学生信息管理系统.exe
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\logic.cpp(178): warning C4700: 使用了未初始化的局部变量“ch”
+  LINK : 没有找到 C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\x64\Debug\学生信息管理系统.exe 或上一个增量链接没有生成它；正在执行完全链接
+main.obj : error LNK2005: "struct Node * head" (?head@@3PEAUNode@@EA) 已经在 logic.obj 中定义
+menu.obj : error LNK2005: "struct Node * head" (?head@@3PEAUNode@@EA) 已经在 logic.obj 中定义
+C:\Users\91202\Desktop\2023-c-project\学生信息管理系统\x64\Debug\学生信息管理系统.exe : fatal error LNK1169: 找到一个或多个多重定义的符号

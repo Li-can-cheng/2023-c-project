@@ -480,3 +480,10 @@ int ReadFromFile(STU records[], int* totalStudents, int* courseCount, int* first
 	printf("¶ÁÈ¡Íê±Ï£¡\n");
 	return 0;
 }
+
+void Create(){
+	Node* stu = (Node*)malloc(sizeof(Node));
+	stu->student = {0," ",0,0,0};
+	head = stu;
+	stu->next = head->next=NULL;
+}

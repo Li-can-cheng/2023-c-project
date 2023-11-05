@@ -6,6 +6,7 @@ int main() {
 	int totalStudents = 0;
 	int courseCount = 0;
 	int first = 1;
+	Create();
 	while (true) {
 		system("cls");
 		int choice = Menu();
@@ -51,8 +52,14 @@ int main() {
 			
 			break;
 		case 5:
-
-
+			system("cls");
+			if (first) {
+				printf("系统中尚无学生信息，请先输入!\n");
+				system("pause");
+				break;
+			}
+			SearchByName(students, courseCount, totalStudents);
+			system("pause");
 			break;
 		case 6:
 			system("cls");
