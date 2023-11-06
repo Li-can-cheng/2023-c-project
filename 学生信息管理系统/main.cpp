@@ -1,12 +1,11 @@
 // main.cpp
 #include "main.h"
-//
+
 int main() {
 	STU students[STU_NUM];
 	int totalStudents = 0;
 	int courseCount = 0;
 	int first = 1;
-	Create();
 	while (true) {
 		system("cls");
 		int choice = Menu();
@@ -23,12 +22,9 @@ int main() {
 				cout << "系统中暂无学生成绩信息！" << endl;
 				system("pause");
 				break;
-
 			}
 			AppendRecord(students, &totalStudents, courseCount);
 			system("pause"); 
-			break;
-
 			break;
 		case 3:
 			system("cls");
@@ -49,7 +45,6 @@ int main() {
 			}
 			SearchByNum(students, totalStudents, courseCount);
 			system("pause");
-			
 			break;
 		case 5:
 			system("cls");
@@ -58,7 +53,7 @@ int main() {
 				system("pause");
 				break;
 			}
-			SearchByName(students, courseCount, totalStudents);
+			SearchByName(students, totalStudents, courseCount);
 			system("pause");
 			break;
 		case 6:
@@ -68,7 +63,7 @@ int main() {
 				system("pause");
 				break;
 			}
-			ModifyRecord(students, courseCount, totalStudents);
+			ModifyRecord(students, totalStudents,courseCount);
 			system("pause");
 			break;
 		case 7:
@@ -77,7 +72,6 @@ int main() {
 				cout << "系统中暂无学生成绩信息，请先输入！" << endl;
 				system("pause");
 				break;
-
 			}
 			CalculateScoreOfStudent(students, totalStudents, courseCount);
 			system("pause");
@@ -124,7 +118,7 @@ int main() {
 				_getch();
 				break;
 			}
-			SortByScore(students, totalStudents, courseCount,Descending);
+			SortByScore(students, totalStudents, courseCount, Ascending);
 			_getch();
 			break;
 		case 12:
@@ -135,7 +129,7 @@ int main() {
 				_getch();
 				break;
 			}
-			SortByScore(students, totalStudents, courseCount,Ascending);
+			SortByScore(students, totalStudents, courseCount, Descending);
 			_getch();
 			break;
 		case 13:
@@ -158,7 +152,7 @@ int main() {
 				system("pause");
 				break;
 			}
-			PrintRecord(students, courseCount, totalStudents);
+			PrintRecord(students, totalStudents, courseCount);
 			system("pause");
 			break;
 		case 15:

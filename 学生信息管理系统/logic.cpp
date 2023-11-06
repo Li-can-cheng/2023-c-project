@@ -1,7 +1,7 @@
 //logic.cpp
 #include "main.h"
-
-
+Node* head = NULL;
+Node* tail = NULL;
 //光标
 void SetPosition(int x, int y) {
 	HANDLE hOut;
@@ -49,6 +49,10 @@ void InputRecord(STU students[], int* totalStudents, int* courseCount)
 		for (j = 0; j < *courseCount; j++) {
 			cin >> students[i].score[j];
 		}
+		if (i == 0)
+			head = createStudent(students[0]);
+		else
+			insertStudent(students[i]);
 	}
 
 	// 在录入完毕之后
@@ -71,6 +75,7 @@ void AppendRecord(STU students[], int* totalStudents, int courseCount)
 		for (j = 0; j < courseCount; j++) {
 			cin >> students[i].score[j];
 		}
+		insertStudent(students[i]);
 	}
 	*totalStudents += num_record;
 	cout << "增加成功！" << endl;
@@ -79,7 +84,7 @@ void AppendRecord(STU students[], int* totalStudents, int courseCount)
 
 void DeleteRecord(STU students[], int* totalStudents, int courseCount)
 {
-	int i, j;
+	int i, j,k;
 	long id;
 	char ch;
 	printf("请输入你要删除学生信息对应的学号：");
@@ -103,6 +108,7 @@ void DeleteRecord(STU students[], int* totalStudents, int courseCount)
 					students[j] = students[j + 1];
 				}
 				printf("删除完毕\n");
+				ReloadNode(totalStudents, students);
 				return;
 			}
 			else if (ch == 'N' || ch == 'n') {
@@ -115,6 +121,7 @@ void DeleteRecord(STU students[], int* totalStudents, int courseCount)
 			}
 		}
 	}
+
 	printf("没找到记录！\n");
 	return;
 }
@@ -174,8 +181,7 @@ void ModifyRecord(STU students[], int totalStudents, int courseCount)
 			}
 			printf("%10.2f%20.2f\n", students[i].sum, students[i].aver);
 			printf("请确认是否需要修改？（Y/N或y/n）");
-			getchar();
-			scanf("%c", ch);
+			scanf(" %c", &ch);
 			if (ch == 'Y' || ch == 'y') {
 				printf("请输入要修改的学生信息");
 				scanf("%ld%s", &students[i].num, students[i].name);
@@ -186,6 +192,7 @@ void ModifyRecord(STU students[], int totalStudents, int courseCount)
 				}
 				students[i].aver = students[i].sum / courseCount;
 				printf("修改完毕\n");
+				ReloadNode(&totalStudents, students);
 				return;
 			}
 			else if (ch == 'N' || ch == 'n') {
@@ -212,8 +219,7 @@ void CalculateScoreOfStudent(STU students[], int totalStudents, int courseCount)
 		students[i].aver = students[i].sum / courseCount;
 		printf("第%d个学生：总分=%.2f平均分=%.2f\n", i + 1, students[i].sum, students[i].aver);
 	}
-
-
+	ReloadNode(&totalStudents, students);
 }
 
 
@@ -242,7 +248,7 @@ void SortByNum(STU students[], int totalStudents, int courseCount)
 	struct STU temp;
 	for (i = 0; i < totalStudents; i++) {
 		k = i;
-		for (j = i + 1; i < totalStudents; j++) {
+		for (j = i + 1; j < totalStudents; j++) {
 			if (students[j].num < students[k].num)
 				k = j;
 		}
@@ -252,6 +258,7 @@ void SortByNum(STU students[], int totalStudents, int courseCount)
 			students[i] = temp;
 		}
 	}
+	ReloadNode(&totalStudents, students);
 	printf("按学号从小到大对学生记录排序完毕");
 }
 
@@ -268,6 +275,7 @@ void SortByName(STU students[], int totalStudents, int courseCount)
 			}
 		}
 	}
+	ReloadNode(&totalStudents, students);
 	printf("按姓名字典对学生记录排序完毕");
 	return;
 }
@@ -289,6 +297,7 @@ void SortByScore(STU students[], int totalStudents, int courseCount, int(*compar
 			students[i] = temp;
 		}
 	}
+	ReloadNode(&totalStudents, students);
 	printf("按总分对学生记录升序排序完毕");
 }
 
@@ -366,6 +375,7 @@ void StatisticAnalysis(STU students[], int totalStudents, int courseCount)
 
 void PrintRecord(STU students[], int totalStudents, int courseCount)
 {
+	Node *temp = head;
 	int i, j;
 	printf("学号\t\t姓名\t\t");
 	for (j = 0; j < courseCount; j++) {
@@ -373,11 +383,12 @@ void PrintRecord(STU students[], int totalStudents, int courseCount)
 	}
 	printf("总分\t\t平均分\n");
 	for (i = 0; i < totalStudents; i++) {
-		printf("%-16ld%-16s", students[i].num, students[i].name);
+		printf("%-16ld%-16s", temp->stus.num, temp->stus.name);
 		for (j = 0; j < totalStudents; j++) {
-			printf("%-16.1lf", students[i].score[j]);
+			printf("%-16.1lf", temp->stus.score[j]);
 		}
-		printf("%-16.1lf%-16.1lf\n", students[i].sum, students[i].aver);
+		printf("%-16.1lf%-16.1lf\n", temp->stus.sum, temp->stus.aver);
+		temp = temp->next;
 	}
 	return;
 }
@@ -481,9 +492,32 @@ int ReadFromFile(STU records[], int* totalStudents, int* courseCount, int* first
 	return 0;
 }
 
-void Create(){
-	Node* stu = (Node*)malloc(sizeof(Node));
-	stu->student = {0," ",0,0,0};
-	head = stu;
-	stu->next = head->next=NULL;
+
+Node* createStudent(struct STU student){
+	Node* newStudent = (Node*)malloc(sizeof(Node));
+	if (newStudent != NULL) {
+		newStudent->stus = student;
+		newStudent->next = NULL;
+	}
+	return newStudent;
+}
+
+void insertStudent(struct STU stus) {
+	Node* newStudent = createStudent(stus);
+	if (newStudent != NULL) {
+		newStudent->next = head;
+		head = newStudent;
+	}
+}
+
+void ReloadNode(int *totalStudents,struct STU students[]) {
+	int k;
+	head = NULL;
+	for (k = 0; k < *totalStudents; k++) {
+		if (k == 0)
+			head=createStudent(students[0]);
+		else
+			insertStudent(students[k]);
+	}
+
 }

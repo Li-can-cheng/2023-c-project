@@ -27,11 +27,11 @@ struct STU {
 };
 
 typedef struct Node {
-    struct STU student;
+    struct STU stus;
     struct Node* next;
 }Node;
 
-Node* head = NULL;
+
 
 int Menu();
 
@@ -89,6 +89,11 @@ void WriteToFile(STU students[], int totalStudents, int courseCount, const char*
 // 从文件读取学生记录
 int ReadFromFile(STU records[], int* totalStudents, int* courseCount, int* first);
 
-
 // 创建节点
-void Create() ;
+Node* createStudent(struct STU stus);
+
+//插入节点
+void insertStudent(struct STU stus);
+
+//重新生成链表
+void ReloadNode(int* totalStudents, struct STU students[]);
